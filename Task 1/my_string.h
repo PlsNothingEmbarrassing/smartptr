@@ -9,11 +9,11 @@ private:
     int length;
 
 public:
-    /* Contructor */
+    /* Contructors */
     my_string() : ptr_(nullptr), length(0){};
-
+    
     my_string(const char *s) : ptr_(nullptr), length(0)
-    {
+    {/* Assigning ptr and length to s */
         length = strlen(s);
         ptr_ = new char[length + 1];
         strcpy(ptr_, s);
@@ -29,7 +29,7 @@ public:
 
         if (this != &s)
         {
-
+            /* make object pointer point to s */
             ptr_ = s.ptr_;
             length = s.length;
             cout << "new assignment" << endl;
