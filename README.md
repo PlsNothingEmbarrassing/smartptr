@@ -13,3 +13,8 @@
  - getChar which retrieves a character from the my_string character data and takes an integer as arguement.
  - setChar which sets a character to a specified value and takes a char as argument.
  - print which prints the character data that has been assigned to the object.
+
+ ![Output of task 1](asp-worksheet-1/Screenshots/task1_output.png)
+
+## Task 2
+
