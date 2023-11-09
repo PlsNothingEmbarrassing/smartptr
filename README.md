@@ -25,6 +25,7 @@
 - In this implementation the deconstructor is responsible for freeing the memory used by an object when it goes out of scope which is when the reference count reaches 0. If the reference count is still > 1 when an object is destroyed then the reference count is decremented.
 ### Member Functions:
 - The member function are identical to the previous task bar the print function which now also prints the object reference count.
+
 ![Ouput of task 2](https://gitlab.uwe.ac.uk/j5-hutton/asp-worksheet-1/-/blob/main/Screenshots/task_2_output.png)
 ## Task 3
 
