@@ -29,7 +29,7 @@
 ![Ouput of task 2](https://gitlab.uwe.ac.uk/j5-hutton/asp-worksheet-1/-/blob/main/Screenshots/task_2_output.png)
 ## Task 3
 - For task 3 we were supposed to implement a test case where the reference count was 0. I used google tests to test when the count is 0 by using the default constructor to create an object instance without any data and asserting that the count was 0.
-![Output of task 1](https://gitlab.uwe.ac.uk/j5-hutton/asp-worksheet-1/-/blob/main/Screenshots/task3_output.png)
+![Output of task 1](https://gitlab.uwe.ac.uk/j5-hutton/asp-worksheet-1/-/blob/main/Screenshots/task3_ouput.png)
 
 ## Task 4
 - For task 4 we were essentially asked to make a smart pointer class which could be used as a template to implement automatic reference counting for a managed object.
@@ -38,7 +38,7 @@
 - I use a virtual deconstuctor in the smart_ptr class for when the reference count reaches 0 the managed object and reference count object data are deleted so there are no memory leaks.
 - Another key difference in this task is how the my_string class accesses its object data as the pointer is now the smart_ptr class so member access is a template get() function to return the pointer to the object data.
 
-![Output of task 1](https://gitlab.uwe.ac.uk/j5-hutton/asp-worksheet-1/-/blob/main/Screenshots/task4_output.png)
+![Output of task 1](https://gitlab.uwe.ac.uk/j5-hutton/asp-worksheet-1/-/blob/main/Screenshots/task4_ouput.png)
 
 
 
