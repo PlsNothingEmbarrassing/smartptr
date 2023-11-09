@@ -88,14 +88,14 @@ class smart_ptr
 {
 private:
     // Pointer to managed object
-    T *m_Object{nullptr};
+    T *m_Obj{nullptr};
     // Pointer to managed object reference count
     ReferenceCount *m_ReferenceCount{nullptr};
 
 public:
     smart_ptr() {}
     // Constructor
-    smart_ptr(T *object) : m_Object{object}, m_ReferenceCount{new ReferenceCount()}
+    smart_ptr(T *object) : m_Obj{object}, m_ReferenceCount{new ReferenceCount()}
     {
         m_ReferenceCount->Increment();
         cout << "Created ptr ref count is " << m_ReferenceCount->GetCount() << endl;
@@ -110,14 +110,14 @@ public:
             if (decrementedCount <= 0)
             {
                 delete m_ReferenceCount;
-                delete m_Object;
+                delete m_Obj;
                 m_ReferenceCount = nullptr;
-                m_Object = nullptr;
+                m_Obj = nullptr;
             }
         }
     }
     // Copy Constructor
-    smart_ptr(const smart_ptr<T> &other) : m_Object{other.m_Object}, m_ReferenceCount{other.m_ReferenceCount}
+    smart_ptr(const smart_ptr<T> &other) : m_Obj{other.m_Obj}, m_ReferenceCount{other.m_ReferenceCount}
     {
         m_ReferenceCount->Increment();
         cout << "Copied ptr ref count is " << m_ReferenceCount->GetCount() << endl;
@@ -131,9 +131,9 @@ public:
             if (m_ReferenceCount && m_ReferenceCount->Decrement() == 0)
             {
                 delete m_ReferenceCount;
-                delete m_Object;
+                delete m_Obj;
             }
-            m_Object = other.m_Object;
+            m_Obj = other.m_Obj;
             m_ReferenceCount = other.m_ReferenceCount;
             m_ReferenceCount->Increment();
         }
@@ -143,17 +143,17 @@ public:
     // Dereference operator
     T &operator*()
     {
-        return *m_Object;
+        return *m_Obj;
     }
 
     T *operator->()
     {
-        return m_Object;
+        return m_Obj;
     }
     // Member access to pointer
     T *get() const
     {
-        return m_Object;
+        return m_Obj;
     }
     int get_count() const
     {
