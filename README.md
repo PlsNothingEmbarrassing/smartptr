@@ -27,8 +27,10 @@
 - The member function are identical to the previous task bar the print function which now also prints the object reference count.
 
 ![Ouput of task 2](Screenshots/task_2_output.png)
+
 ## Task 3
 - For task 3 we were supposed to implement a test case where the reference count was 0. I used google tests to test when the count is 0 by using the default constructor to create an object instance without any data and asserting that the count was 0.
+
 ![Output of task 3](Screenshots/task3_ouput.png)
 
 ## Task 4
@@ -43,7 +45,18 @@
 - The my_string class in this task is very similar to task 1 as the reference counting is now handled by the smart_ptr class. The difference is that the my_string object's pointer is now initialised with an instance of the smart_ptr class which manages the objects memory and reference count.
 - Another difference is that the get/setChar functions access the object data through the get() method.
 
+### Alternative smart_ptr implementation
+- I also included a different implementation which removes the additional ReferenceCount class and handles the reference count value directly within the smart_ptr class
+
 ### Testing
+For testing I used the google test testing framework to test my smart_ptr and my_string class.
+
+Constructor Test - The purpose of this test is to check if the constructor of my_string is working properly. A my_string object is created with the value of "Hello World" and checks that the first letter is "H" which indicates that the data is being assigned to the object correctly. It also checks the reference count is 1 indicating there is only the single instance of the object.
+
+Default Constructor Test - The purpose of this test is to check that the default constructor is working correctly. It initialises an instance of my_string without a value and checks that the getChar function returns a null character as it should in this scenario. It also checks that the reference count is 0 as the pointer should be initialised as a nullptr and that the print functions returns an empty string.
+
+Constructor with string - This test makes sure that the constructor can take a C-string as an argument and ensures that the object is created correctly similarly to the first test. It also checks that the count is as expected and the print function works.
+
 
 
 ![Output of task 4](Screenshots/task4_ouput.png)
