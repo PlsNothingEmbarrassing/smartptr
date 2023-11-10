@@ -57,7 +57,19 @@ Default Constructor Test - The purpose of this test is to check that the default
 
 Constructor with string - This test makes sure that the constructor can take a C-string as an argument and ensures that the object is created correctly similarly to the first test. It also checks that the count is as expected and the print function works.
 
+Copy Constructor Test - This test checks that the copy constructor works correctly. It creates a my_string instance and creates a copy using the copy constructor. It then verifies that the data was copied correctly by checking the character data and the reference count.
 
+Assignment operator test- This test checks that the assignment operator is working correctly. It creates 2 my_string instances and assigns the value of the first to the second and then verifies that the data is correct by checking the first character and the reference count.
+
+setChar Test- This test checks the setChar method. A my_string instance is created and we use the setChar method for index 1 to change the character value. We then check that the correct character is returned for that index using the getChar method.
+
+getChar Test- Although this function has been used in the other tests I thought it would be more thourough if I tested it on its own also. A my_string instance is assigned a value and then we retrieve the first character of the string and check that it is what we assigned it.
+
+Print Test - To test that the print function is working correctly an empty instance of my_string is created, we then redirect stdout to a stringstream to capture the output. The print function is now called and the output is captured and stored in a new string. stdout is reset so no more outputs are captured. We then check to make sure that the print function returned an empty string as there it was not created with any data.
+
+Chain operations - This test is similar to ones used in the previous tasks by using block scope to check the reference count as objects come in and out of scope. It creates a my_string object and then creates copies within nested scopes and verifies that the reference count behaves correctly.
+
+As you can see in the screenshot of the output below, the task 4 implementation passed the written tests.
 
 ![Output of task 4](Screenshots/task4_ouput.png)
 
