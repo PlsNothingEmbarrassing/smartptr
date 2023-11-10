@@ -14,7 +14,7 @@
  - setChar which sets a character to a specified value and takes a char as argument.
  - print which prints the character data that has been assigned to the object.
 
- ![Output of task 1](https://gitlab.uwe.ac.uk/j5-hutton/asp-worksheet-1/-/blob/main/Screenshots/task1_output.png)
+ ![Output of task 1](Screenshots/task1_output.png)
 
 ## Task 2
 - Task 2 extends upon the implementation of task 1 by implementing reference counting into the my_string class. This is relatively straightforward by adding an reference count data member and incrementing and decrementing when an object is copied or assigned.
