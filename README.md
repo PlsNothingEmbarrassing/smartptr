@@ -33,10 +33,18 @@
 
 ## Task 4
 - For task 4 we were essentially asked to make a smart pointer class which could be used as a template to implement automatic reference counting for a managed object.
+### Reference Count class
 - To begin with I created a reference count class to contain the count and perform incrementing and decrementing operations.
+### Smart_ptr class
 - I then created a template smart_ptr class which would be used to manage an objects memory and reference count. The code for the ptr class is quite similar to the my_string object code from previous implementations but with some key differences such as using the member functions of the reference count object to increment and decrement the count.
-- I use a virtual deconstuctor in the smart_ptr class for when the reference count reaches 0 the managed object and reference count object data are deleted so there are no memory leaks.
-- Another key difference in this task is how the my_string class accesses its object data as the pointer is now the smart_ptr class so member access is a template get() function to return the pointer to the object data.
+- I use a virtual deconstuctor in the smart_ptr class for when the reference count reaches 0 the managed object and reference count pointer data are deleted so there are no memory leaks. As the objects are "newed" and their memory is dynamically allocated, they must be explicitly deleted as dynamically allocated objects have a lifetime that extends beyond the scope that they were created in. The pointers to the managed object and the managed refcount are set to nullptr so that they are not left dangling. This is when a pointer is left pointing to deallocated memory and so dereferencing the pointer can lead to unpredictable results as the memory might have been used for a different purpose.
+- I used a get() function to access the raw pointer to the managed object which was mainly used to perform operations such as getChar and setChar. The way that the managed object data can be accessed is through the member access operator overload (->) which is a convenient way which allows us to use the smart pointer similarly to how we would use a raw pointer. This is not really used however as the pointer is initialised within the my_string constructor so it is already a member and therefore we can use the "." operator instead. I left the overloaded member access operator in as I can still create smart_ptrs for other object types where I may be working with the pointer instead of the object instance so it may be handy in the future.
+### my_string class
+- The my_string class in this task is very similar to task 1 as the reference counting is now handled by the smart_ptr class. The difference is that the my_string object's pointer is now initialised with an instance of the smart_ptr class which manages the objects memory and reference count.
+- Another difference is that the get/setChar functions access the object data through the get() method.
+
+### Testing
+
 
 ![Output of task 4](https://gitlab.uwe.ac.uk/j5-hutton/asp-worksheet-1/-/blob/main/Screenshots/task4_ouput.png)
 
