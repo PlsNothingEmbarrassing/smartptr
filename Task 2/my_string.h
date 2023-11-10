@@ -56,7 +56,7 @@ public:
 			cout << "Ref count has reached 0" << endl;
 			delete[] ptr_;
 			delete ref_count;
-			delete length;
+			
 		}
 	}
 
