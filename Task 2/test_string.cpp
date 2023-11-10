@@ -9,21 +9,21 @@ int main()
 
         {
             my_string t = s;
-            s.print(); // Reference count should be 2
-            t.print(); // Reference count should be 2
+            s.print(); // Ref count 2
+            t.print(); // Ref count 2
 
             {
                 my_string u = s;
-                s.print(); // Reference count should be 3
-                t.print(); // Reference count should be 3
-                u.print(); // Reference count should be 3
+                s.print(); // Ref count 3
+                t.print(); // Ref count 3
+                u.print(); // Ref count 3
             }
 
-            s.print(); // Reference count should be 2
-            t.print(); // Reference count should be 2
+            s.print(); // Ref count 2
+            t.print(); // Refcount 2
         }
 
-        s.print(); // Reference count should be 1
+        s.print(); // Ref count 1
 
         s.setChar(1, 'E');
         s.print();
