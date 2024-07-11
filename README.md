@@ -1,4 +1,4 @@
-# ASP worksheet 1
+# Creating Smart Pointer Class and testing using gtest framework
 
 
 
